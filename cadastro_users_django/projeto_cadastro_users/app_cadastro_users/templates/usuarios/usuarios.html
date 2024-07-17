@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usuários</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'usuarios/usuarios.css' %}" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1 class="texto">Cadastro de Usuários</h1>
+      <a class="link" href="{% url 'home' %}">Home</a>
+    </nav>
+    <div class="container">
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Idade</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for usuario in usuarios %}
+          <tr>
+            <td>{{usuario.id_usuario}}</td>
+            <td>{{usuario.nome}}</td>
+            <td>{{usuario.idade}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
